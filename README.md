@@ -1,7 +1,7 @@
 # PingPongGame
 
 ## Aim:
-
+To develop a ping pong game using C# program in unity .
 
 
 ## Algorithm:
@@ -32,8 +32,40 @@ In PaddleRight (Negative button - down and positive buttom - up) and paddleLeft(
  After completing, to move the ball, in the ball inspector give the value for speed
  
  ## Program:
+ ```
+ using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameManager : MonoBehaviour
+{
+    public Ball ball;
+    public Paddle paddle;
+    public static Vector2 bottomLeft;
+    public static Vector2 topRight;
+    // Start is called before the first frame update
+    void Start()
+    {
+        bottomLeft = Camera.main.ScreenToWorldPoint(new Vector2(0, 0));
+        topRight = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+        Instantiate(ball);
+        Paddle paddle1 = Instantiate(paddle) as Paddle;
+        Paddle paddle2 = Instantiate(paddle) as Paddle;
+        paddle1.Init(true);
+        paddle2.Init(false);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+}
+ ```
  
  ## Output:
+ ![image](https://user-images.githubusercontent.com/75235128/168572900-f1332f43-6237-44a0-95cd-1a443f0659f0.png)
+
  
  ## Result:
-
+Thus ping pong game using C# program in unity is created .
